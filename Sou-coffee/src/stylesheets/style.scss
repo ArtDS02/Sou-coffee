@@ -1,0 +1,695 @@
+@font-face {
+  font-family: "Dark Idea";
+  src: url(.././assets/fonts/dark-idea.ttf);
+}
+
+@font-face {
+  font-family: "TA Typefire";
+  src: url(.././assets/fonts/ta-typefire.otf);
+}
+
+@import "variables";
+
+// BASE PAGE STYLES
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: transparent;
+  font-family: $main-font;
+  height: 100%;
+  letter-spacing: 1px;
+  body {
+    background: $beige;
+    color: $black;
+    min-height: 100%;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    padding: 0;
+    position: relative;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $heading-font;
+      margin-top: 0;
+    }
+    h1 {
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: $dark-brown;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a:focus,
+button:focus,
+details:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  -webkit-box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
+  box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
+  outline: none;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+hr {
+  border: 0;
+}
+
+// Button styles
+.button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button,
+.button:visited,
+.button:hover,
+.button:active,
+.button:focus {
+  background: $dark-brown;
+  border: 2px solid $dark-brown;
+  border-radius: 28px;
+  color: $beige;
+  color: change-color($black, $lightness: 100%);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 12px 16px;
+  text-transform: uppercase;
+  &:hover {
+    background: transparent;
+    color: $dark-brown;
+    text-decoration: none;
+  }
+}
+
+.button-link-about {
+  position: absolute;
+  top: 58%;
+  border-radius: 28px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border: 2px solid #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 12px 16px;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid #000;
+}
+
+.button-link-about:hover {
+  background-color: #432D2D;
+  color: #FFF;
+}
+
+
+// Logo styles
+.logo {
+  font-size: 1.8rem;
+  margin: 0 auto;
+  padding-top: 14px;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  a,
+  a:visited,
+  a:hover,
+  a:active,
+  a:focus {
+    color: $beige;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    &:hover {
+      text-decoration: none;
+    }
+    .logo--coffee {
+      font-family: $logo-font--coffee;
+      margin-bottom: -10px;
+    }
+    .logo--grounds {
+      font-family: $logo-font--grounds;
+      text-transform: lowercase;
+    }
+  }
+}
+
+// Message styles
+.message {
+  border-radius: 5px;
+  line-height: 1.55;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.info-message {
+  background: change-color($info-blue, $lightness: 95%);
+  border: 1px solid change-color($info-blue, $lightness: 90%);
+  color: $info-blue;
+}
+
+noscript .info-message {
+  left: 50%;
+  margin: 0 auto;
+  min-width: 280px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Phần css cho buy */
+.custom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+  // background-image: url("../assets/images/background.jpg");
+  background-color: rgba(83, 61, 61, 0.7); /* Màu nền màu đen với độ mờ 70% */
+  background-size: cover; /* Hình ảnh fit với kích thước của background */
+  background-position: center;
+  padding: 30px;
+}
+
+.custom-content .exit-button {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  opacity: 0.5;
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi suôn sẻ */
+}
+
+.custom-content .exit-button:hover {
+  opacity: 1;
+  transform: scale(1.4); /* Phóng to ảnh khi hover chuột vào */
+}
+
+.custom-area {
+  display: flex;
+  width: 90%;
+}
+
+.addbox-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+}
+
+.addbox-area img {
+  width: 320px;
+  height: 320px;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi suôn sẻ */
+}
+
+.addbox-area img:hover {
+  transform: scale(1.05); /* Phóng to ảnh khi hover chuột vào */
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8);
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 450px;
+  align-items: center;
+}
+
+.content-area img {
+  width: 320px;
+  height: 320px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.content-area > img:hover {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8);
+  transform: scale(1.05);
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 130px 0;
+  align-items: center;
+  margin-top: 20px;
+  // border: 1px solid black;
+}
+
+.note textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #dcc7b6;
+  border-radius: 10px;
+  width: 400px; /* Đặt chiều rộng cố định cho các ô input */
+  height: 150px;
+  transition: box-shadow 0.3s ease; /* Thêm hiệu ứng cho box-shadow */
+}
+
+.note textarea:focus {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8); /* Đổi box-shadow khi ô input được focus */
+}
+
+.note input {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #dcc7b6;
+  border-radius: 10px;
+  width: 400px; /* Đặt chiều rộng cố định cho các ô input */
+  height: 50px;
+  transition: box-shadow 0.3s ease; /* Thêm hiệu ứng cho box-shadow */
+}
+
+.note input:focus {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8); /* Đổi box-shadow khi ô input được focus */
+}
+
+.note button {
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #a19088; /* Màu nền mặc định */
+  color: #000; /* Màu chữ mặc định */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng cho màu nền, màu chữ, và scale */
+}
+
+.note button:hover {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8); /* Hiệu ứng box-shadow khi hover */
+  background-color: #784c33; /* Màu nền khi hover */
+  color: #000; /* Màu chữ khi hover */
+  font-weight: bold;
+  transform: scale(1.05); /* Phóng to nút khi hover */
+}
+
+.note button:focus {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8); /* Đổi box-shadow khi ô input được focus */
+}
+
+.input-error {
+  border: 3px solid red;
+}
+
+
+/* Phần css cho popup */
+.main-content.popup {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  position: absolute;
+  background-color: #000000af;
+  overflow: auto; /* Tạo scroll khi cần thiết */
+}
+
+.popup-container.popup-gallery {
+  background-color: transparent;
+  padding: 10px 50px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Sử dụng grid auto-fill và minmax để tự động chia cột */
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.image-popup {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-popup:hover {
+  box-shadow: 0 0 3px 3px hsla(48, 18%, 43%, 0.8);
+  transform: scale(1.05);
+}
+
+figcaption{
+  font-size: 15px;
+  margin-top: 5px;
+  color: aliceblue;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Phần css cho payment */
+.payment-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Ensuring it appears on top of other content */
+}
+
+.payment-container {
+  width: 80%;
+  height: 90%;
+  background-color: white; /* Background color for the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.exit-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.payment-area-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.QR-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.QR-area img {
+  width: 300px;
+  height: 300px;
+}
+
+.Information-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.Information-area h1,
+.Information-area h2,
+.Information-area p {
+  margin: 10px 0;
+}
+
+.Information-area button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Information-area button:hover {
+  background-color: #0056b3;
+}
+
+.pay-button{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #432D2D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+// About page styles
+.main-content.about {
+  max-width: 90%;
+  max-height: fit-content;
+  
+  .content-container {
+    max-width: 90%;
+    max-height: 40%;
+    display: flex;
+    padding: 20px;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    // Ensure the img and p elements each take up 50% of the width
+    figure {
+      flex: 0 0 50%; /* Makes figure take up 50% of the width */
+      padding: 20px;
+      margin: 0; /* Reset margin for consistency */
+    }
+
+    p {
+      flex: 0 0 50%; /* Makes p take up 50% of the width */
+      padding: 0 20px; /* Add padding to match figure spacing */
+      line-height: 1.35;
+      font-size: 25px;
+    }
+  }
+
+  h3 {
+    border-bottom: 6px double $golden-brown;
+  }
+
+  img {
+    max-width: 100%; /* Ensure the image is responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(change-color($black, $lightness: 43%), 0.7);
+    box-shadow: 1px 1px 8px 1px rgba(change-color($black, $lightness: 43%), 0.7);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Styles for the popup content */
+.popup-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-menu-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Needed for positioning the close button */
+  animation: popup-slide-in 0.3s ease-out;
+}
+
+/* Animation for popup entrance */
+@keyframes popup-slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Styles for the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: #ff5f5f;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background: #e04e4e;
+}
+
+/* Styles for the left section of the popup (image) */
+.popup-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+/* Styles for the right section of the popup (details and controls) */
+.popup-right {
+  flex: 2;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup-right h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.popup-right p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.popup-right label {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.popup-right input {
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styles for the buttons */
+.popup-right button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-right button:first-of-type {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.popup-right button:first-of-type:hover {
+  background-color: #0056b3;
+}
+
+.popup-right button:last-of-type {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.popup-right button:last-of-type:hover {
+  background-color: #5a6268;
+}
+
+
+
+
+
+
+@import "header";
+@import "main";
+@import "footer";
+@import "hero-banner";
